@@ -4,5 +4,6 @@
     projectId: process.env.REACT_APP_FIREBASE_DB_URL,
     databaseURL: process.env.REACT_APP_FIREBASE_PROJECT_ID
   };
+  
   // Initialize Firebase
   firebase.initializeApp(firebaseConfig);
