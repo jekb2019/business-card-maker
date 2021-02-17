@@ -1,4 +1,4 @@
-@value makerGreen, makerBlack, makerWhite from '../../common/colors.css';
+@value makerGreen, makerBlack, makerWhite, makerLightPink, makerPink from '../../common/colors.css';
 
 .header {
     width: 100%;
@@ -28,4 +28,10 @@
     display: inline-block;
     font-size: 12px;
     border-radius: 10px;
+}
+.logout_button:hover {
+    background-color: makerLightPink;
+}
+.logout_button:active {
+    background-color: makerPink;
 }
