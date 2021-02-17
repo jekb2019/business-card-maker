@@ -1,4 +1,4 @@
-@value makerGreen from '../../common/colors.css';
+@value makerGreen, makerWhite, makerLightPink, makerPink from '../../common/colors.css';
 
 .login_box {
     width: 500px;    
@@ -9,6 +9,7 @@
     flex-direction: column;
     align-items: center;
     padding-bottom: 20px;
+    background-color: makerWhite;
 }
 
 .title {
@@ -25,4 +26,11 @@
     height: 30px;
     text-align: center;
     cursor: pointer;
+    background-color: makerWhite;
+}
+.option:hover {
+    background-color: makerLightPink;
+}
+.option:active {
+    background-color: makerPink;
 }

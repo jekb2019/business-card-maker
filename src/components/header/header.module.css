@@ -1,8 +1,7 @@
-@value makerGreen from '../../common/colors.css';
-@value makerWhite from '../../common/colors.css';
-@value makerBlack from '../../common/colors.css';
+@value makerGreen, makerBlack, makerWhite from '../../common/colors.css';
 
 .header {
+    width: 100%;
     background-color: makerGreen;
     color: makerWhite;
     display: flex;
@@ -12,11 +11,12 @@
     position: relative;
 }
 
-.header_logo {
+.logo {
     width: 50px;
 }
 
 .logout_button {
+    cursor: pointer;
     position: absolute;
     right: 10px;
     background-color: makerWhite;

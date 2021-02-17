@@ -4,18 +4,12 @@ import Footer from './components/footer/footer';
 import Header from './components/header/header';
 import LoginBox from './components/login_box/loginBox';
 
-function App() {
-
-  const [showLoginBox, setShowLoginBox] = useState(true);
+function App({authService}) {
 
   return (
-    <div>
-      {showLoginBox && 
-        <div className={styles.login_box}>
-          <LoginBox/>
-        </div>
-      }
-    </div>
+      <div className={styles.app}>
+        <LoginBox authService={authService}/>
+      </div>
   );
 }
 
