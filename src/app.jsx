@@ -1,14 +1,22 @@
-import { useState } from 'react';
+import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import styles from './app.module.css';
-import Footer from './components/footer/footer';
-import Header from './components/header/header';
 import LoginBox from './components/login_box/loginBox';
+import Maker from './components/maker/maker';
 
 function App({authService}) {
 
   return (
       <div className={styles.app}>
-        <LoginBox authService={authService}/>
+        <BrowserRouter>
+          <Switch>
+            <Route exact path="/">
+              <LoginBox authService={authService}/>
+            </Route>
+            <Route path="/maker">
+              <Maker authService={ authService }/>
+            </Route>
+          </Switch>
+        </BrowserRouter>
       </div>
   );
 }
