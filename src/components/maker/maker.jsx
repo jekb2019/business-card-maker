@@ -11,7 +11,7 @@ const Maker = ({ authService }) => {
     {
       id: '1',
       name: 'Jason',
-      Company: 'Google',
+      company: 'Google',
       theme: 'dark',
       title: 'Software Engineer',
       email: 'jason@gmail.com',
@@ -22,7 +22,7 @@ const Maker = ({ authService }) => {
     {
       id: '2',
       name: 'Jason2',
-      Company: 'Google',
+      company: 'Google',
       theme: 'light',
       title: 'Software Engineer',
       email: 'jason@gmail.com',
@@ -33,7 +33,7 @@ const Maker = ({ authService }) => {
     {
       id: '3',
       name: 'Jason3',
-      Company: 'Google',
+      company: 'Google',
       theme: 'colorful',
       title: 'Software Engineer',
       email: 'jason@gmail.com',
