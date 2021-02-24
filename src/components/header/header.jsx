@@ -1,18 +1,16 @@
 import React from 'react';
 import styles from './header.module.css';
 
-const Header = ({ onLogout }) => {
-
-
-    return(
-        <header className={styles.header}>
-            {true && 
-                <button onClick={onLogout} className={styles.logout_button}>Logout</button>
-            }
-            <img className={styles.logo} src={process.env.PUBLIC_URL + '/favicon.ico'}/>
-            <h1>Business Card Maker</h1>
-        </header>
-    )
-};
+const Header = ({ onLogout }) => (
+  <header className={styles.header}>
+    {onLogout && (
+      <button className={styles.logout} onClick={onLogout}>
+        Logout
+      </button>
+    )}
+    <img className={styles.logo} src="/favicon.ico" alt="logo" />
+    <h1 className={styles.title}>Business Card Maker</h1>
+  </header>
+);
 
 export default Header;
