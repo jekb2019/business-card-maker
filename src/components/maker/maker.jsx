@@ -7,14 +7,11 @@ import Preview from '../preview/preview';
 import styles from './maker.module.css';
 
 const Maker = ({ FileInput, authService, cardRepository }) => {
-  const historyState = useHistory().state;
-  const [cards, setCards] = useState({}
-   
-  );
-  const [userId, setUserId] = useState(historyState && historyState.id);
-
-
   const history = useHistory();
+  const historyState = history?.location?.state;
+  const [cards, setCards] = useState({});
+  const [userId, setUserId] = useState(historyState && historyState.id);
+  
   const onLogout = () => {
     authService.logout();
   };
@@ -28,7 +25,7 @@ const Maker = ({ FileInput, authService, cardRepository }) => {
     })
     // 컴포넌트가 언마운트 될 때 실행할 함수를 return해주면 리엑트가 알아서 해준다
     return () => stopSync();
-  }, [userId]);
+  }, [userId, cardRepository]);
 
   useEffect(() => {
     authService.onAuthChange(user => {
@@ -38,11 +35,11 @@ const Maker = ({ FileInput, authService, cardRepository }) => {
         history.push('/');
       }
     });
-  });
+  }, [authService, userId, history]);
 
   const createOrUpdateCard = (card) => {
     setCards(cards => {
-      const updated = {... cards};
+      const updated = {...cards};
       updated[card.id] = card;
       return updated;
     });
@@ -51,7 +48,7 @@ const Maker = ({ FileInput, authService, cardRepository }) => {
 
   const deleteCard = (card) => {
     setCards(cards => {
-      const updated = {... cards};
+      const updated = {...cards};
       delete updated[card.id];
       return updated;
     });
